@@ -1,6 +1,6 @@
 <?php
 
-namespace frontend\components\data;
+namespace i4erkasov\dropdownlistsorter\data;
 
 use Yii;
 use yii\base\InvalidConfigException;

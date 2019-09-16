@@ -1,6 +1,6 @@
 <?php
 
-namespace frontend\components\widgets;
+namespace i4erkasov\dropdownlistsorter\widgets;
 
 use Yii;
 use yii\helpers\Html;
