@@ -68,7 +68,7 @@ $dataProvider = new yii\data\ActiveDataProvider([
 
 Набор параметров такой же как для стандартного Yii2 Sort 
 
-За изсключение: 
+За исключением: 
 
 Параметр  defaultOrder является обязательным
 
@@ -87,7 +87,7 @@ $dataProvider = new yii\data\ActiveDataProvider([
 
 Пример php: 
 ```php
-echo DropDownSorter::widget([
+echo \i4erkasov\dropdownlistsorter\widget\DropDownSorter::widget([
     'sort'       => $dataProvider->sort,
     'class'      => 'filter-select__select',
     'onchange'   => '$.pjax.reload({container: "#pjax-catalog", url: $(this).val()})',
@@ -99,8 +99,10 @@ echo DropDownSorter::widget([
 ]);
 ```
 
-Пример с использование шаблонизатора yii2-twig
+Пример с использованием шаблонизатора yii2-twig
 ```php
+{{ use('i4erkasov/dropdownlistsorter/widget/DropDownSorter') }}
+{{ use('yii/widgets/Pjax') }}
 {{ dropDownSorter_widget({
                         'sort': dataProvider.sort,
                         'options': {
@@ -113,9 +115,10 @@ echo DropDownSorter::widget([
                             'price'
                         ]
                     }) | raw }}
+{{ pjax_end() }}
 ```
 
-Оьратите внимание в выше узащынных примерах обработка событи на изменения DropDownList реализована через pjax
+Обратите внимание в вышеуказанных примерах обработка события на изменения (change) DropDownList реализована через pjax
 ```php
 'onchange': '$.pjax.reload({container: "#pjax-catalog", url: $(this).val()})',
 ```
